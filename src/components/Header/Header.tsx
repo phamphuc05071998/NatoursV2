@@ -1,18 +1,19 @@
 import React from "react";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 import logo from ".././../assets/img/logo-white.png";
-function Header() {
+import Button from "../UI/Button";
+const  Header: React.FC = () =>  {
   return (
     <header className={styles.header}>
-      <div className={styles.logoBox}>
-        <img src={logo} alt="logo" className={styles.logo} />
+      <div className={styles.headerLogoBox}>
+        <img src={logo} alt="logo" className={styles.headerLogo} />
       </div>
-      <div className={styles.textBox}>
+      <div className={styles.headerTextBox}>
         <h1 className={styles.headerPrimary}>
           <span className={styles.headerPrimaryMain}>Outdoors </span>
           <span className={styles.headerPrimarySub}>is where life happens</span>
         </h1>
-        <a href="#" className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimated}`}>Discover our tour </a>
+      <Button>Discovery our tour</Button>
       </div>
     </header>
   );

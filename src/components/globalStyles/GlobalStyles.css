@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
-
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -12,13 +11,15 @@ body {
   padding: 30px;
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
 }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
 *,
 *::after,
 a::before {
