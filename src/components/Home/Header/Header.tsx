@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import logo from ".././../assets/img/logo-white.png";
-import Button from "../UI/Button";
+import logo from "../.././../assets/img/logo-white.png";
+import Button from "../../UI/Button";
 const  Header: React.FC = () =>  {
   return (
     <header className={styles.header}>

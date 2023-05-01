@@ -1,11 +1,14 @@
 import React from 'react'
 import styles from "./Button.module.scss"
 interface Props {
-    children?: string
+    children?: string,
+    color?: string,
+    textColor?: string
 }
-export const Button: React.FC<Props> = ({children}) => {
+export const Button: React.FC<Props> = ({children, color, textColor}) => {
+  
   return (
-    <a href="#" className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimated}`}>{children} </a>
+    <a href="#" className={`${styles.btn} ${styles.btnWhite} ${styles.btnAnimated}`} style={{backgroundColor: color, color: textColor}} >{children} </a>
   )
 }
 export default Button

@@ -1,6 +1,6 @@
 // @import "./../globalStyles/sass/abstracts/variables";
-@import "./../sass/abstracts/variables";
-@import "./../sass/base/animations";
+@import "../../sass/abstracts/variables";
+@import "../../sass/base/animations";
 
 
 
@@ -11,7 +11,7 @@
       rgba($color-primary, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(./../../assets/img/hero.jpg);
+    url(../../../assets/img/hero.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);

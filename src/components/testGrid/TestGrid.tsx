@@ -3,14 +3,7 @@ import styles from "./TestGrid.module.scss"
 const TestGrid: React.FC = () => {
   return (
     <section className={styles.gridTest}>
-        <div className={styles.row}>
-            <div className={styles.col1of2}>
-              Col 1 of 2  
-            </div>
-            <div className={styles.col1of2}>
-              Col 1 of 2  
-            </div>
-        </div>
+      
         <div className={styles.row}>
             <div className={styles.col1of3}>
               Col 1 of 3  
