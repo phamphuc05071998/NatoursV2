@@ -1,6 +1,10 @@
 
 
 .btn-text {
+   & {
+       outline: none;
+}
+    
     &:link,
     &:visited {
         font-size: $default-font-size;
@@ -10,6 +14,8 @@
         border-bottom: 1px solid $color-primary;
         padding: 3px;
         transition: all 0.2s;
+        border: none;
+       
     }
     &:hover {
         background-color: $color-primary;

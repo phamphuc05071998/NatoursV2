@@ -1,0 +1,83 @@
+@import "./../../sass//abstracts/variables";
+
+.storiesSection {
+  padding: 15rem 0;
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+//   padding-top: 6rem;
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &Shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orangered;
+    // border-radius: 50%;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+  }
+  &Image {
+    height: 100%;
+    position: relative;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+  &Text {
+    transform: skewX(12deg);
+  }
+  &Caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+  &:hover &Caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &Image {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(90%);
+  }
+}
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  //    margin-bottom: 6rem;
+    &Content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

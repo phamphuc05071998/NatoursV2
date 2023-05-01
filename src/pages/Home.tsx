@@ -3,6 +3,8 @@ import Header from '../components/Home/Header/Header'
 import { About } from '../components/Home/About/About'
 import { Features } from '../components/Home/Features/Features'
 import { Tour } from '../components/Home/Tour/Tour'
+import Stories from '../components/Home/Stories/Stories'
+import Booking from '../components/Home/Booking/Booking'
 // import TestGrid from '../components/testGrid/TestGrid'
 function Home() {
   return (
@@ -13,6 +15,8 @@ function Home() {
       <About/>
       <Features/>
       <Tour/>
+      <Stories/>
+      <Booking/>
     </main>
 
     </>

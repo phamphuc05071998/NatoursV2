@@ -2,13 +2,11 @@ import React from "react";
 import styles from "./Tour.module.scss";
 import "./../../globalStyles/GlobalStyles.scss";
 import Button from "../../UI/Button";
-
+import AnimatedHeading from "../../UI/Heading/AnimatedHeading";
 export const Tour: React.FC = () => {
   return (
     <section className={styles.tourSection}>
-      <div className="u-center-text u-margin-bottom-big">
-        <h2 className="heading-secondary">Most popular tour</h2>
-      </div>
+      <AnimatedHeading center>Most popular tour</AnimatedHeading>
 
       <div className="row">
         <div className="col-1-of-3">
