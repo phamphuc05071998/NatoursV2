@@ -5,6 +5,7 @@ import { Features } from '../components/Home/Features/Features'
 import { Tour } from '../components/Home/Tour/Tour'
 import Stories from '../components/Home/Stories/Stories'
 import Booking from '../components/Home/Booking/Booking'
+import Footer from '../components/Home/Footer/Footer'
 // import TestGrid from '../components/testGrid/TestGrid'
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <Stories/>
       <Booking/>
     </main>
+    <Footer/>
 
     </>
   
