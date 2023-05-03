@@ -1,11 +1,11 @@
-import React from "react";
+import React  from "react";
 import styles from "./Tour.module.scss";
 import "./../../globalStyles/GlobalStyles.scss";
 import Button from "../../UI/Button";
 import AnimatedHeading from "../../UI/Heading/AnimatedHeading";
 export const Tour: React.FC = () => {
   return (
-    <section className={styles.tourSection}>
+    <section className={styles.tourSection} id="section-tour">
       <AnimatedHeading center>Most popular tour</AnimatedHeading>
 
       <div className="row">
@@ -40,7 +40,8 @@ export const Tour: React.FC = () => {
                 <div className={styles.cardPriceBox}>
                   <p className={styles.cardPriceOnly}>Only</p>
                   <p className={styles.cardPriceValue}>$297</p>
-                  <Button>Book now!</Button>
+                  <Button to="popup">Book now!</Button>
+
                 </div>
               </div>
             </div>
@@ -77,7 +78,8 @@ export const Tour: React.FC = () => {
                 <div className={styles.cardPriceBox}>
                   <p className={styles.cardPriceOnly}>Only</p>
                   <p className={styles.cardPriceValue}>$497</p>
-                  <Button>Book now!</Button>
+                  <Button to="popup">Book now!</Button>
+
                 </div>
               </div>
             </div>
@@ -114,7 +116,7 @@ export const Tour: React.FC = () => {
                 <div className={styles.cardPriceBox}>
                   <p className={styles.cardPriceOnly}>Only</p>
                   <p className={styles.cardPriceValue}>$897</p>
-                  <Button>Book now!</Button>
+                  <Button to="popup">Book now!</Button>
                 </div>
               </div>
             </div>

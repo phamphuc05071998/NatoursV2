@@ -1,0 +1,78 @@
+@import "./../../globalStyles/GlobalStyles.scss";
+
+.popup {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:target &Container {
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+  &Container {
+    // max-width: 160rem;
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all.4s 0.2s;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  &Left {
+    width: 33.33333%; 
+    display: table-cell;
+  }
+  &Right {
+    width: 66.666666%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+  &Image {
+    width: 100%;
+    display: block;
+  }
+  &Close {
+    &:visited,
+    &:link {
+      display: inline-block;
+      text-decoration: none;
+      padding: 1.5rem;
+      font-size: 3rem;
+      position: absolute;
+      top: 0;
+      right: 2rem;
+      color: $color-black;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &Paragraph {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-dark-2;
+    hyphens: auto;
+    -moz-hyphens: auto;
+  }
+}

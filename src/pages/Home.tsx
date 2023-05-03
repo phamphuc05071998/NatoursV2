@@ -7,6 +7,7 @@ import Stories from '../components/Home/Stories/Stories'
 import Booking from '../components/Home/Booking/Booking'
 import Footer from '../components/Home/Footer/Footer'
 import Navigation from '../components/Home/Navigation/Navigation'
+import Popup from '../components/Home/Popup/Popup'
 // import TestGrid from '../components/testGrid/TestGrid'
 function Home() {
   return (
@@ -22,7 +23,7 @@ function Home() {
       <Booking/>
     </main>
     <Footer/>
-
+    <Popup/>
     </>
   
   )
