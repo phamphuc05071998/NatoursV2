@@ -63,7 +63,7 @@ const Booking: React.FC = () => {
                   </label>
                 </div>
               </div>
-          
+
               <div className={styles.formGroup}>
                 <Button color="#55c57a" textColor="#fff">
                   Next Step &rarr;

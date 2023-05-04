@@ -1,12 +1,19 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import logo from "../../../assets/img/logo-green-2x.png";
+import logo1x from "../../../assets/img/logo-green-1x.png";
+import smallLogo2x from "../../../assets/img/logo-green-small-2x.png";
+import smallLogo1x from "../../../assets/img/logo-green-small-1x.png";
 import "./../../globalStyles/GlobalStyles.scss";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLogoBox}>
-        <img src={logo} alt="full logo" className={styles.footerLogo}></img>
+        <picture className={styles.footerLogo}>
+          <source srcSet={`${smallLogo1x} 1x, ${smallLogo2x} 2x`} media="(max-width: 37.5em)"/>
+        <img srcSet={`${logo} 1x,  ${logo1x} 2x`} alt="full logo" ></img>
+
+        </picture>
       </div>
       <div className="row">
         <div className="col-1-of-2">

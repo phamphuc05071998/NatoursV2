@@ -1,4 +1,5 @@
 @import "./../../sass//abstracts/variables";
+@import "./../../sass//abstracts/mixins";
 
 .storiesSection {
   padding: 15rem 0;
@@ -6,6 +7,10 @@
   text-align: center;
   position: relative;
 //   padding-top: 6rem;
+  @include respond(tad-port) {
+    padding: 10rem 0;
+  } 
+
 }
 
 .story {
@@ -19,18 +24,42 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+  @include respond(tad-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  } 
+  @include respond(phone) {
+
+  transform: skewX(0);
+
+  } 
 
   &Shape {
     width: 15rem;
     height: 15rem;
     float: left;
     background-color: orangered;
-    // border-radius: 50%;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
+    // -webkit-shape-outside: circle(50% at 50% 50%);
+    // shape-outside: circle(50% at 50% 50%);
+    // -webkit-clip-path: circle(50% at 50% 50%);
+    // clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+    @supports (-webkit-clip-path: circle(50% at 50% 50%)) or
+      (clip-path: circle(50% at 50% 50%)) {
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      border-radius:none;
+
+    }
+    @include respond(phone) {
+
+      transform: skewX(0);
+    
+      } 
   }
   &Image {
     height: 100%;
@@ -41,6 +70,11 @@
   }
   &Text {
     transform: skewX(12deg);
+    @include respond(phone) {
+
+      transform: skewX(0);
+    
+      } 
   }
   &Caption {
     position: absolute;

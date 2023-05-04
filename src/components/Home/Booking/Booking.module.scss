@@ -1,5 +1,7 @@
 @import "./../../globalStyles/GlobalStyles.scss";
 @import "./../../sass/abstracts/variables";
+@import "./../../sass/abstracts/mixins";
+
 .bookingSection {
   padding: 15rem 0;
   background-image: linear-gradient(
@@ -7,6 +9,9 @@
     $color-primary-light,
     $color-primary-dark
   );
+  @include respond(tad-port) {
+    padding: 10rem 0;
+  }
 }
 .book {
   background-image: linear-gradient(
@@ -16,100 +21,129 @@
 
       transparent 50%
     ),
-    url(../../../assets//img//nat-10.jpg);
-  background-size: 100%;
+    url(../../../assets//img/nat-10.jpg);
+
+  background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
-  height: 50rem;
+
   &Form {
     width: 50%;
     padding: 6rem;
+    @include respond(tab-land) {
+      width: 65%;
+    }
+    @include respond(tad-port) {
+      width: 100%;
+
+    }
+  }
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 65%,
+
+        transparent 65%
+      ),
+      url(../../../assets//img/nat-10.jpg);
+  }
+  @include respond(tad-port) {
+    background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9),
+      rgba($color-white, 0.9)
+    ),    url(../../../assets//img/nat-10.jpg);;
   }
 }
 .form {
-    &Group:not(:last-child){
-        margin-bottom:2rem ;
+  &Group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &Input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    color: inherit;
+    transition: all 0.3s;
+    @include respond(tad-port) {
+        width: 100%;
+       
     }
-    &Input {
-        font-size: 1.5rem;
-        padding: 1.5rem 2rem;
-        border-radius: 3px;
-        background-color: rgba($color-white, 0.5);
-        border: none;
-        font-family: inherit;
-        border-bottom: 3px solid transparent;
-        width: 90%;
-        display: block;
-        color: inherit;
-        transition: all 0.3s;
-        &:focus {
-            outline: none;
-            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-            border-bottom: 3px solid $color-primary;
-        }
-        &::-webkit-input-placeholder {
-            color: $color-grey-dark-2;
-        }
-        &:focus:invalid {
-           border-color:$color-secondary-dark ;
-        }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
     }
-  
-    &Label {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-left: 2rem;
-        margin-top: 1.7rem;
-        display: block;
-        transition: all 0.3s;
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+    &:focus:invalid {
+      border-color: $color-secondary-dark;
+    }
+  }
 
+  &Label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 1.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+  &Input:placeholder-shown + &Label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+  &RadioGroup {
+    width: 50%;
+    display: inline-block;
+    @include respond(tad-port) {
+        width: 100%;
+        margin-bottom: 2rem;
     }
-    &Input:placeholder-shown + &Label {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-4rem);
-    }
-    &RadioGroup {
-        width: 50%;
-        display: inline-block;
-    }
-    &RadioLabel {
-        cursor: pointer;
-        font-size: $default-font-size;
-        position: relative;
-        padding-left: 5rem;
+  }
+  &RadioLabel {
+    cursor: pointer;
+    font-size: $default-font-size;
+    position: relative;
+    padding-left: 5rem;
+  }
+  &RadioButton {
+    height: 3rem;
+    width: 3rem;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
 
+    &::after {
+      height: 1.5rem;
+      width: 1.5rem;
+      content: "";
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
     }
-    &RadioButton {
-        height: 3rem;
-        width: 3rem;
-        border: 3px solid $color-primary ;
-        border-radius: 50%;
-        display:inline-block;
-        position: absolute;
-        top: -0.4rem;
-        left: 0;
-
-        &::after {
-            height: 1.5rem;
-            width: 1.5rem;
-            content: '';
-            display: block;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50% ,-50%);
-            background-color: $color-primary;
-            opacity: 0;
-
-
-        }
-    }
-    &RadioInput:checked ~ &RadioLabel &RadioButton::after {
-        opacity: 1;
-    }
-    &RadioInput {
-        display: none;
-    }
+  }
+  &RadioInput:checked ~ &RadioLabel &RadioButton::after {
+    opacity: 1;
+  }
+  &RadioInput {
+    display: none;
+  }
 }

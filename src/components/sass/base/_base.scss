@@ -1,25 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
 body {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
-    box-sizing: border-box;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding:3rem;
+  box-sizing: border-box;
+  @include respond(tad-port) {
+    padding:0;
   }
-  html {
-    font-size: 62.5%;
+}
+html {
+  font-size: 62.5%;
+ 
+  @include respond(tab-land) {
+    font-size: 56.25% !important;
   }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+  @include respond(tad-port) {
+    font-size: 50%  !important;
   }
-  
+  @include respond(bid-desktop) {
+    font-size: 75%  !important;
+  }
+
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
 *,
 *::after,
@@ -27,4 +40,9 @@ a::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

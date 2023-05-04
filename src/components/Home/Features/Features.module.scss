@@ -1,5 +1,7 @@
 @import "../../sass/abstracts/variables";
 @import "../../sass/base/animations";
+@import "../../sass/abstracts/mixins";
+
 
 .featureSection {
     padding: 20rem 0;
@@ -16,6 +18,10 @@
     &>* {
         transform: skewY(7deg);
     }
+    @include respond(tad-port) {
+        padding: 10rem 0;
+      
+        }
 }
 
 .featureBox {
@@ -27,7 +33,10 @@
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     text-align: center;
     transition: all 0.3s;
-
+    @include respond(tad-port) {
+        padding: 2rem 0;
+      
+        }
     &Icon {
         font-size: 6rem;
         margin-bottom: 0.5rem;
@@ -44,4 +53,5 @@
     }
 
     &Text {}
+    
 }
